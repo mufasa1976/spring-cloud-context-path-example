@@ -12,6 +12,6 @@ public interface HeroApi {
   List<Hero> findAll();
 
   @RequestMapping(Routes.HERO)
-  Optional<Hero> find(@PathVariable(Routes.Param.REFERENCE) String reference);
+  Hero find(@PathVariable(Routes.Param.REFERENCE) String reference);
 
 }

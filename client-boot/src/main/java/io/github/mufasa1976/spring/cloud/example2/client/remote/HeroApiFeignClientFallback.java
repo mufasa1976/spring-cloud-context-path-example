@@ -16,8 +16,8 @@ public class HeroApiFeignClientFallback implements HeroApiFeignClient {
   }
 
   @Override
-  public Optional<Hero> find(String reference) {
-    return Optional.empty();
+  public Hero find(String reference) {
+    return null;
   }
 
 }

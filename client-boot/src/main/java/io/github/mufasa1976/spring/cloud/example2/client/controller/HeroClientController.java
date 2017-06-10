@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class HeroClientController {
 
   @GetMapping(Routes.HERO)
   public ResponseEntity<Hero> findByReference(@PathVariable(Routes.Param.REFERENCE) String reference) {
-    return heroApi.find(reference)
+    return Optional.ofNullable(heroApi.find(reference))
         .map(ResponseEntity::ok)
         .orElseGet(ResponseEntity.notFound()::build);
   }
