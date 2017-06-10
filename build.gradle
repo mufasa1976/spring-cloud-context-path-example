@@ -36,6 +36,8 @@ subprojects {
 
     dependencies {
         compile 'org.springframework:spring-web'
+        compile 'com.fasterxml.jackson.core:jackson-databind'
+        compile 'org.apache.commons:commons-lang3'
         compileOnly 'org.projectlombok:lombok'
     }
 }
@@ -45,6 +47,5 @@ configure(subprojects.findAll {it.name.endsWith("-boot")}) {
         compile project(":common")
 
         compile 'org.springframework.boot:spring-boot-starter-web'
-        compile 'org.springframework.cloud:spring-cloud-starter-feign'
     }
 }
