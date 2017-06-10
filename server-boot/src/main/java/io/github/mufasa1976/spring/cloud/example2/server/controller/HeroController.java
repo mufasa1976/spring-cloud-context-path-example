@@ -1,4 +1,4 @@
-package io.github.mufasa1976.spring.cloud.example2.server;
+package io.github.mufasa1976.spring.cloud.example2.server.controller;
 
 import java.util.List;
 

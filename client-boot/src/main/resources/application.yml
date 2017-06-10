@@ -1,0 +1,8 @@
+hero-service:
+  ribbon:
+    listOfServers: localhost:8080
+logging:
+  level:
+    io.github.mufasa1976.spring.cloud.example2: debug
+feign:
+  log-level: basic

@@ -1,4 +1,4 @@
-package io.github.mufasa1976.spring.cloud.example2.server;
+package io.github.mufasa1976.spring.cloud.example2.server.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 
 import io.github.mufasa1976.spring.cloud.example2.common.Skill;
+import io.github.mufasa1976.spring.cloud.example2.server.service.HeroService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -42,11 +43,11 @@ public class HeroServiceImpl implements HeroService {
     return UUID.randomUUID().toString();
   }
 
-  List<Hero> findAll() {
+  public List<Hero> findAll() {
     return heroes;
   }
 
-  Optional<Hero> findByReference(String reference) {
+  public Optional<Hero> findByReference(String reference) {
     return heroes.stream()
         .filter(hero -> StringUtils.equals(hero.getReference(), reference))
         .findAny();
