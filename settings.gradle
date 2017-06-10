@@ -1,0 +1,5 @@
+rootProject.name = 'spring-cloud-context-path-example'
+
+include ':common'
+include ':sender-boot'
+include ':receiver-boot'

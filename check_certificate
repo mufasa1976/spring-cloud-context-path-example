@@ -1,0 +1,22 @@
+#!/usr/bin/env groovy
+import javax.net.ssl.SSLSocket
+import javax.net.ssl.SSLSocketFactory
+import java.io.*
+
+if (args.length < 1) {
+  println "Usage: check_certificate <host> [<port>]"
+  System.exit 1
+}
+
+def sslSocketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault()
+def sslSocket = (SSLSocket) sslSocketFactory.createSocket(args[0], args.length > 1 ? Integer.parseInt(args[1]) : 443)
+
+def input = sslSocket.inputStream
+def output = sslSocket.outputStream
+
+output.write 1
+
+while (input.available() > 0) {
+  print input.read()
+}
+println "Successfully connected"
